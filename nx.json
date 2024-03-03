@@ -44,6 +44,14 @@
       "options": {
         "targetName": "lint"
       }
+    },
+    {
+      "plugin": "@nx/webpack/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview"
+      }
     }
   ],
   "targetDefaults": {
@@ -65,7 +73,19 @@
       }
     },
     "@nx/react": {
-      "library": {}
+      "library": {
+        "style": "css",
+        "linter": "eslint"
+      },
+      "application": {
+        "babel": true,
+        "style": "css",
+        "linter": "eslint",
+        "bundler": "webpack"
+      },
+      "component": {
+        "style": "css"
+      }
     }
   }
 }
